@@ -33,6 +33,6 @@ jobs:
       - name: Save DigitalOcean kubeconfig with short-lived credentials
         run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 k8s-1-21-9-do-0-blr1-1646067365030
       - name: Deploy to DigitalOcean Kubernetes
-        run: kubectl apply -f $GITHUB_WORKSPACE/deployment.yml
+        run: kubectl apply -f $GITHUB_WORKSPACE/deployment.yaml
       - name: Verify deployment
         run: kubectl rollout status deployment/node-hello-app
